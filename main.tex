@@ -2,6 +2,8 @@
 
 
 \usepackage{arxiv}
+% uncomment to change preprint headers
+%\renewcommand{\WIP}{Bananas are yummy}
 \usepackage{lipsum}% Can be removed after putting your text content
 
 \usepackage[utf8]{inputenc} % allow utf-8 input
@@ -16,7 +18,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
-\usepackage{bmm} % for \mathbbm{1} etc
+%\usepackage{bmm} % for \mathbbm{1} etc
 \usepackage{mathtools} % for rcases
 \usepackage{amssymb}
 \usepackage[ruled,vlined]{algorithm2e}
@@ -42,7 +44,8 @@
 %\date{} 					% Or removing it
 
 \author{
-    Igor Krawczuk
+    Igor Krawczuk\thanks{\url{https://krawczuk.eu}}\\
+    LIONS/LSM @ EPFL
 %  David S.~Hippocampus\thanks{Use footnote for providing further
 %    information about author (webpage, alternative
 %    address)---\emph{not} for acknowledging funding agencies.} \\
@@ -79,14 +82,15 @@ style=alphabetic,
 citestyle=alphabetic,
 sorting=none]{biblatex}
 %\usepackage[backend=biber,style=alphabetic,sorting=none]{biblatex}
-\addbibresource{references.bib}
+\addbibresource{main.bib}
 
 \newtheorem{claim}{Claim}
 \newtheorem{prop}{Proposition}
 \newtheorem{caveat}{Caveat}[claim]
 
 \newtheorem{definition}{Definition}
-\newcommand{\todo}[1]{ \textcolor{red}{#1}}
+\usepackage{todonotes}
+%\newcommand{\todo}[1]{ \textcolor{red}{#1}}
 % risk and adversarial risk
 \DeclareMathOperator{\Op}{Op}
 
@@ -94,6 +98,7 @@ sorting=none]{biblatex}
 
 \begin{document}
 \maketitle
+\listoftodos
 
 \begin{abstract}
 \lipsum[1]
@@ -101,12 +106,12 @@ sorting=none]{biblatex}
 
 
 % keywords can be removed
-\keywords{First keyword \and Second keyword \and More}
+%\keywords{First keyword \and Second keyword \and More}
 
 
-\section{Introduction}
-\cite{hadash2018estimate}
-\subfile{sections/section1}
+\subfile{sections/introduction}
+\subfile{sections/experiments}
+\subfile{sections/conclusion}
 %\bibliography{references}  %%% Remove comment to use the external .bib file (using bibtex).
 \printbibliography
 \printglossaries
