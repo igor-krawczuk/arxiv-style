@@ -46,7 +46,7 @@
 
  
 \usepackage[autostyle]{csquotes}
-\usepackage[acronym]{glossaries}
+\usepackage[acronym,toc,shortcuts,xindy]{glossaries}
 
 \usepackage{subfiles}
 
@@ -118,6 +118,8 @@ sorting=none]{biblatex}
 % risk and adversarial risk
 \DeclareMathOperator{\Op}{Op}
 
+\input{glossary}
+%might have to manually call make glossaries
 \makeglossaries
 
 \begin{document}
@@ -145,7 +147,9 @@ sorting=none]{biblatex}
     \end{enumerate}
   \item \textbf{\emph{Q: What is the specific thesis/argument/question you want to convey/make/explore?\\A:}}
 \end{itemize}
-Cite example \cite{kour2014real} cref example \cref{subsec:formal_statement} vref example \vref{sec:experiments}
+Cite example \cite{kour2014real} cref example \cref{subsec:formal_statement} vref example \vref{sec:experiments}.
+
+Glossary example \glspl{gnn} 2nd occurence glossary example \gls{gnn}.
 
 
 \subfile{sections/introduction}
