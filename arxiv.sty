@@ -24,20 +24,24 @@
 \flushbottom
 \sloppy
 
+
+
+\newcommand{\headeright}{A Preprint}
+\newcommand{\undertitle}{A Preprint}
+\newcommand{\shorttitle}{\@title}
+
 \usepackage{fancyhdr}
 \fancyhf{}
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancyheadoffset{0pt}
-%\rhead{\scshape \footnotesize A preprint}
-\newcommand{\WIP}{A preprint. Work in Progress}
-\rhead{\scshape \footnotesize \WIP}
-\chead{\@title}
+\rhead{\scshape \footnotesize \headeright}
+\chead{\shorttitle}
 \cfoot{\thepage}
 
 
 %Handling Keywords
-\def\keywordname{{\bfseries \emph Keywords}}%
+\def\keywordname{{\bfseries \emph{Keywords}}}%
 \def\keywords#1{\par\addvspace\medskipamount{\rightskip=0pt plus1cm
 \def\and{\ifhmode\unskip\nobreak\fi\ $\cdot$
 }\noindent\keywordname\enspace\ignorespaces#1\par}}
@@ -179,7 +183,7 @@
   \begingroup
     \renewcommand{\thefootnote}{\fnsymbol{footnote}}
     % for perfect author name centering
-    \renewcommand{\@makefnmark}{\hbox to \z@{$^{\@thefnmark}$\hss}}
+    %\renewcommand{\@makefnmark}{\hbox to \z@{$^{\@thefnmark}$\hss}}
     % The footnote-mark was overlapping the footnote-text,
     % added the following to fix this problem               (MK)
     \long\def\@makefntext##1{%
@@ -219,8 +223,7 @@
     \centering
     {\LARGE\sc \@title\par}
     \@bottomtitlebar
-    %\textsc{A Preprint}\\
-    \textsc{\WIP}\\
+    \textsc{\undertitle}\\
     \vskip 0.1in
     \def\And{%
       \end{tabular}\hfil\linebreak[0]\hfil%
