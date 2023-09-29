@@ -6,13 +6,13 @@
 \renewcommand{\undertitle}{A preprint}
 \renewcommand{\headeright}{A preprint}
 \usepackage{lipsum}% Can be removed after putting your text content
+\setlipsum{auto-lang=false}
 
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
 \usepackage[english]{babel}
 
 \usepackage{url}            % simple URL typesetting
-\usepackage{booktabs}       % professional-quality tables
 \usepackage{amsfonts}       % blackboard math symbols
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
@@ -24,6 +24,18 @@
 \usepackage{amssymb}
 \usepackage[ruled,vlined]{algorithm2e}
 
+% keywords can be removed
+%\keywords{First keyword \and Second keyword \and More}
+%NOTE: heavily encourage you to look at this guide 
+% https://web.archive.org/web/20230707195854/https://people.inf.ethz.ch/markusp/teaching/guides/guide-tables.pdf
+\usepackage{booktabs}       % professional-quality tables
+%table colors
+%https://ftp.acc.umu.se/mirror/CTAN/macros/latex/contrib/colortbl/colortbl.pdf
+\usepackage{colortbl}
+%https://ftpmirror1.infania.net/mirror/CTAN/macros/latex/contrib/booktabs/booktabs.pdf
+% guide  recommendation
+\renewcommand{\arraystretch}{1.2}% (or 1.3)
+
 \usepackage{thmtools}
 \usepackage{varioref}
 \usepackage{hyperref}
@@ -31,13 +43,24 @@
 
 
 
-\usepackage{xcolor}
 
  
 \usepackage[autostyle]{csquotes}
 \usepackage[acronym]{glossaries}
 
 \usepackage{subfiles}
+
+\usepackage{mathpazo} % add possibly `sc` and `osf` options
+\usepackage{eulervm}
+\usepackage{hyperref}
+\usepackage[dvipsnames,table]{xcolor}
+\hypersetup{
+   colorlinks=true,
+   urlcolor=BlueIMT,
+   linkcolor=MidnightBlue,
+   citecolor=Green
+}
+\definecolor{BlueIMT}{RGB}{0,42,72}
 
 \title{Customized arxiv style}
 
@@ -80,7 +103,7 @@
 
 \usepackage[backend=biber,
 style=alphabetic,
-citestyle=alphabetic,
+citestyle=alphabetic,backref=true,
 sorting=none]{biblatex}
 %\usepackage[backend=biber,style=alphabetic,sorting=none]{biblatex}
 \addbibresource{main.bib}
@@ -98,6 +121,9 @@ sorting=none]{biblatex}
 \makeglossaries
 
 \begin{document}
+%alternating row colors default
+\rowcolors{3}{white}{gray!15}
+
 \maketitle
 \listoftodos
 
@@ -106,8 +132,20 @@ sorting=none]{biblatex}
 \end{abstract}
 
 
-% keywords can be removed
-%\keywords{First keyword \and Second keyword \and More}
+
+\section*{Focus help}
+\begin{itemize}
+  \item \textbf{Reminder:} \emph{Keep this text focused on a clear type of essay and plan} \href{https://brilliantio.com/how-to-focus-on-writing-an-essay/}{See post for details}
+  \item \textbf{Essay type}: \emph{Expository/Descriptive/Narrative/Timed/Persuasive/Argumentative}
+  \item \textbf{Essay topic/oneline summary}: \emph{edit here}
+  \item \textbf{Essay depth/research required}: \emph{informal summary/opinion (unsourced),basic outline (minimal sourcing), exposition (decent sourcing), deep dive (extensive sourcing)}
+  \item 	\textbf{Section plan}:
+    \begin{enumerate}
+      \item Introduction:\emph{single line summary}
+    \end{enumerate}
+  \item \textbf{\emph{Q: What is the specific thesis/argument/question you want to convey/make/explore?\\A:}}
+\end{itemize}
+Cite example \cite{kour2014real} cref example \cref{subsec:formal_statement} vref example \vref{sec:experiments}
 
 
 \subfile{sections/introduction}
